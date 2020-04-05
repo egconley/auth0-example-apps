@@ -6,10 +6,11 @@
 <style>
 main {
     display: flex;
+    margin-top: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25rem;
+    max-width: 25rem;
     /* border: 1px solid lightgray; */
     border-radius: 0.25em;
     /* background-image: linear-gradient(-30deg, #e9e8e3, #ebeae5); */

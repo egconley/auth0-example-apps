@@ -6,3 +6,4 @@ apps.js
 .DS_Store
 
 .now
+.env
