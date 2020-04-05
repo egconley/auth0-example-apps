@@ -6,6 +6,10 @@
         "api/graphql.js": {
         "runtime": "@now/node@1.5.0"
         }
+    },
+    "build": {
+        "env": {
+            "URL": "@url"
+        }
     }
-
 }
