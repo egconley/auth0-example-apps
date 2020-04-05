@@ -1,5 +1,4 @@
 const MongoClient = require("mongodb").MongoClient;
-const encoding = require('encoding');
 const URI = process.env.URL;
 const DB_NAME = "dse";
 
