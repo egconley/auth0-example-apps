@@ -1,0 +1,8 @@
+{
+    "AUTH0_DOMAIN": "sample-apps.auth0.com",
+    "AUTH0_CLIENT_ID": "basnqxjtNyVCDU6hVxTbvgqTPS8W3Ckl",
+    "AUTH0_CLIENT_SECRET": "PmWDwGFyxoNqlIUveSiWk48dWyTqi46ljbCZgFhI1OdA4cyTjb81sf15kt1ZNyVG",
+    "AUTH0_KEYWORD_REPLACE_MAPPINGS": { "AUTH0_TENANT_NAME": "sample-apps" },
+    "AUTH0_ALLOW_DELETE": false,
+    "AUTH0_EXCLUDED_RULES": [ "rule-1-name" ]
+}
