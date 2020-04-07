@@ -10,6 +10,8 @@ node_modules
 
 # testing
 /coverage
+*/config.json
+.env
 
 # next.js
 /.next/
@@ -31,3 +33,5 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.env
+auth0/config.json
