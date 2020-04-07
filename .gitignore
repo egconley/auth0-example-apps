@@ -34,4 +34,4 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env
-auth0/config.json
+auth0/.config.json
