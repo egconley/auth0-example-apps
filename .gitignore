@@ -1,9 +1,11 @@
 /node_modules/
 /public/build/
 
-config.json
+auth0/config.json
 apps.js
 .DS_Store
 
 .now
 .env
+.next
+.yarn
