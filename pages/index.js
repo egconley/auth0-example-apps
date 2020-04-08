@@ -1,60 +1,87 @@
 import Head from 'next/head'
 
 const Home = () => (
-  <div className="container">
+  <div className="center">
     <Head>
-      <title>Create Next App</title>
+      <title>Auth0 DSE Sample Apps</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <main>
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+      <div className="header-brand">
+        <img src="https://cdn.auth0.com/website/press/resources/auth0-logo-monotone-black.svg" className="header-brand-img" alt="Auth0 logo" />
+        <div style={{marginLeft: 20 + 'px'}}><a href="https://dse.rosnovsky.us">DSE Sample Apps</a></div>
+      </div>
 
-      <p className="description">
-        Get started by editing <code>pages/index.js</code>
-      </p>
+      <div className="quicklinks">
+        <p><a href="https://manage.auth0.com/#/applications" target="_blank" >Manage Dashboard</a></p>
+        <p><a href="https://github.com/rosnovsky/auth0-example-apps/blob/master/auth0/tenant.yaml" target="_blank" >Download Tenant Settings</a></p>
+        <p><a href="https://github.com/rosnovsky/auth0-example-apps" target="_blank" >Fork on Github</a></p>
+      </div>
 
-      <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <div className="apps">
 
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
+        <div className="app">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img className="w-full" src="/vue-screenshon.png" alt="Sunset in the mountains" />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2"><a className="hover:text-red-600 focus:shadow-outline" href="https://vue-spa.rosnovsky.us">Vue SPA &rarr;</a></div>
+              <p className="text-gray-700 text-base">
+              Vue SPA with Auth0 protecting user's profile page and fetching user data from the database.
+              </p>
+            </div>
+            <div className="docs">
+                <p><a href="#">stack.name Quickstart</a></p>
+                <p><a href="#">stack.name Docs</a></p>
+            </div>
+            <div className="deploy">
+              <a href="#" className="deploy"><img src="https://zeit.co/button" alt="Deploy to ZEIT Now" /></a>
+            </div>
+          </div>
+        </div>
 
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
+        <div className="app">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img className="w-full" src="/vue-screenshon.png" alt="Sunset in the mountains" />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2"><a className="hover:text-red-600 focus:shadow-outline" href="https://vue-spa.rosnovsky.us">Vue SPA &rarr;</a></div>
+              <p className="text-gray-700 text-base">
+              Vue SPA with Auth0 protecting user's profile page and fetching user data from the database.
+              </p>
+            </div>
+            <div className="docs">
+                <p><a href="#">stack.name Quickstart</a></p>
+                <p><a href="#">stack.name Docs</a></p>
+            </div>
+            <div className="deploy">
+              <a href="#" className="deploy"><img src="https://zeit.co/button" alt="Deploy to ZEIT Now" /></a>
+            </div>
+          </div>
+        </div>
 
-        <a
-          href="https://zeit.co/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
-        </a>
+        <div className="app">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg">
+            <img className="w-full" src="/vue-screenshon.png" alt="Sunset in the mountains" />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2"><a className="hover:text-red-600 focus:shadow-outline" href="https://vue-spa.rosnovsky.us">Vue SPA &rarr;</a></div>
+              <p className="text-gray-700 text-base">
+              Vue SPA with Auth0 protecting user's profile page and fetching user data from the database.
+              </p>
+            </div>
+            <div className="docs">
+                <p><a href="#">stack.name Quickstart</a></p>
+                <p><a href="#">stack.name Docs</a></p>
+            </div>
+            <div className="deploy">
+              <a href="#" className="deploy"><img src="https://zeit.co/button" alt="Deploy to ZEIT Now" /></a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
     <footer>
-      <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-      </a>
+      <img src="/auth0-logo-forlightbg.png" width="80px" alt="Auth0 Logo" />
     </footer>
 
     <style jsx>{`
