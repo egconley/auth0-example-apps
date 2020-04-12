@@ -12,9 +12,9 @@ import {
     DropdownItem,
     NavbarText
 } from 'reactstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const Header = (props) => {
+const Header = ({user}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -42,15 +42,18 @@ const Header = (props) => {
                         </DropdownToggle>
                         <DropdownMenu right>
                             <DropdownItem>
-                                Login
+                                {user ? <a href="/profile">{user.name}</a> : <a href="/api/login">Login</a> }
                             </DropdownItem>
                             <DropdownItem>
-                                Manage Apps
+                                {user ? user.email : ""}
                             </DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>
-                                Logout
-                            </DropdownItem>
+                            { user ? (
+                                <>
+                                <DropdownItem divider />
+                                <DropdownItem>
+                                    <a href="/api/logout">Logout</a>
+                                </DropdownItem>
+                                </>) : ""}
                         </DropdownMenu>
                     </UncontrolledDropdown >
                 </Nav>

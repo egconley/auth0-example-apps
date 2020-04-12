@@ -1,7 +1,7 @@
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, Row, Button
-  } from 'reactstrap';
+} from 'reactstrap';
 
 const App = ({ app }) => {
     return (

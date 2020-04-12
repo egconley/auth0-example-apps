@@ -10,7 +10,7 @@ export default function createApolloClient(initialState, ctx) {
         ssrMode: Boolean(ctx),
         link: new HttpLink({
         uri: 'https://example-apps-rosnovsky.auth0-dse.now.sh/api/graphql', // Server URL (must be absolute)
-        // credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+        credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
         fetch,
         }),
         cache: new InMemoryCache().restore(initialState),
