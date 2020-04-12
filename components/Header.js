@@ -23,7 +23,7 @@ const Header = ({user}) => {
         <>
         <Navbar color="light" light expand="md">
             <img src="https://cdn.auth0.com/website/press/resources/auth0-logo-monotone-black.svg" className="float-left mr-3" width="80px" alt="Auth0 logo" />
-            <NavbarBrand href="https://dse.rosnovsky.us">DSE Sample Apps</NavbarBrand>
+            <NavbarBrand href="/">DSE Sample Apps</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>

@@ -7,7 +7,7 @@ const App = ({ app }) => {
     return (
     <>
         <Card style={{"width": 24 + "rem"}} className="mx-auto mt-5">
-            <a href={app.url}><CardImg top style={{"min-height": "200" + "px"}} src={app.screenshot} alt={app.name} /></a>
+            <a href={app.url}><CardImg top style={{"minHeight": "200" + "px"}} src={app.screenshot} alt={app.name} /></a>
             <CardBody>
                 <CardTitle><a href={app.url}><h2>{app.name}</h2></a></CardTitle>
                 <CardText>{app.description}</CardText>
