@@ -36,6 +36,6 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env
+auth0/.config.json
 
-.next
-.yarn
+.vscode
