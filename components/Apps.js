@@ -3,7 +3,7 @@ import App from './App';
 
 const Apps = ({apps}) => {
     return (
-        <Row className="mx-auto" style={{"width": 80 + "%"}}>
+        <Row className="mx-auto" style={{"width": 90 + "%"}}>
             {apps.map(app => (
                 <App app={app} key={app._id} />
                 )

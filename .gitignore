@@ -36,3 +36,5 @@ yarn-error.log*
 .env.production.local
 .env
 auth0/.config.json
+
+.vscode
