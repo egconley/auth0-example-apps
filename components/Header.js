@@ -12,7 +12,8 @@ import {
     DropdownItem,
     NavbarText
 } from 'reactstrap';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import React from 'react';
 
 const Header = ({user}) => {
     const [isOpen, setIsOpen] = useState(false);
