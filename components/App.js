@@ -2,6 +2,7 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, Row, Button
 } from 'reactstrap';
+import ContentLoader from 'react-content-loader';
 import { useState, useEffect } from "react";
 import { toDataUrl } from '../lib/screenshots';
 
@@ -56,4 +57,5 @@ const App = ({ app }) => {
         </Card>
     </>
     )};
+
     export default App;
