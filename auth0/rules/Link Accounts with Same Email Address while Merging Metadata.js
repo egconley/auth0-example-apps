@@ -34,7 +34,6 @@ function linkUsersByEmailWithMetadata(user, context, callback) {
       return callback(new Error('[!] Rule: Multiple user profiles already exist - cannot select base profile to link with'));
     }
     if (data.length === 0) {
-      console.log('[-] Skipping link rule');
       return callback(null, user, context);
     }
 

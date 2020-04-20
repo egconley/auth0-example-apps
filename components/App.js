@@ -10,9 +10,7 @@ const App = ({ app }) => {
     const [screenshot, setScreenshot ] = useState();
 
     const refetchScreenshot = async (screenshotUrl) => {
-        console.log("refetching screenshot for " + screenshotUrl)
         function callback(result){
-            console.log("refetch callback fired")
             setScreenshot(result);
             localStorage.setItem(app.name, result);
             return result;

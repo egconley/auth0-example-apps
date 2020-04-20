@@ -2,7 +2,6 @@ import auth0 from '../lib/auth0';
 
 export default async function callback(req, res) {
     try {
-        console.log("Executing login callback")
         await auth0.handleCallback(req, res, { redirectTo: '/' });
     } catch (error) {
         console.error(error);

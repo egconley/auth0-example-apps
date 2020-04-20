@@ -16,9 +16,7 @@
 const got = require('got')
 
 module.exports = async function hook(user, context, cb) {
-  console.log(user);
   try {
-    console.log("Hook started")
     const result = await revoke(user, context)
     return cb(null, result)
   } catch (error) {
@@ -28,7 +26,6 @@ module.exports = async function hook(user, context, cb) {
 }
 
 async function getCredentials(context) {
-  console.log("Hook gets credentials")
   const {body} = await got.post(
     `https://${context.connection.tenant}.auth0.com/oauth/token`,
     {
@@ -46,7 +43,6 @@ async function getCredentials(context) {
 }
 
 async function getAllRefreshTokens({id}, applicationId, context, token) {
-  console.log(`Getting Refresh tokens for ${id}`)
   const url = `https://${context.connection.tenant}.auth0.com/api/v2/device-credentials?type=refresh_token&&client_id=${applicationId}&user_id=auth0|${id}`
   try {
     var {body} = await got.get(url, {
@@ -109,7 +105,7 @@ async function revoke(user, context) {
     context,
     accessToken
   )
-  console.log(`${tokens.length} tokens found`)
+  
   await Promise.all(
     tokens.map(e => deleteRefreshToken(e, context, accessToken))
   )
