@@ -2,6 +2,7 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, Row, Button
 } from 'reactstrap';
+import ContentLoader from 'react-content-loader';
 import { useState, useEffect } from "react";
 import { toDataUrl } from '../lib/screenshots';
 
@@ -9,9 +10,7 @@ const App = ({ app }) => {
     const [screenshot, setScreenshot ] = useState();
 
     const refetchScreenshot = async (screenshotUrl) => {
-        console.log("refetching screenshot for " + screenshotUrl)
         function callback(result){
-            console.log("refetch callback fired")
             setScreenshot(result);
             localStorage.setItem(app.name, result);
             return result;
@@ -56,4 +55,5 @@ const App = ({ app }) => {
         </Card>
     </>
     )};
+
     export default App;
