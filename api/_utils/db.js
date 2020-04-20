@@ -9,7 +9,6 @@ module.exports = () => {
     }
     return MongoClient.connect(URI, { useNewUrlParser: true }).then(client => {
         cachedDb = client.db(DB_NAME);
-        console.log("connected");
         return cachedDb;
     });
 };
