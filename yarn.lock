@@ -2241,9 +2241,15 @@
     form-data "^3.0.0"
 
 "@types/node@*", "@types/node@>=6":
+<<<<<<< HEAD
+  version "13.11.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.11.0.tgz#390ea202539c61c8fa6ba4428b57e05bc36dc47b"
+  integrity sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
+=======
   version "13.11.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.11.1.tgz#49a2a83df9d26daacead30d0ccc8762b128d53c7"
   integrity sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
+>>>>>>> nextjs
 
 "@types/node@^10.1.0":
   version "10.17.19"
@@ -2879,6 +2885,24 @@ anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+<<<<<<< HEAD
+apollo-boost@0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/apollo-boost/-/apollo-boost-0.4.7.tgz#b0680ab0893e3f8b1ab1058dcfa2b00cb6440d79"
+  integrity sha512-jfc3aqO0vpCV+W662EOG5gq4AH94yIsvSgAUuDvS3o/Z+8Joqn4zGC9CgLCDHusK30mFgtsEgwEe0pZoedohsQ==
+  dependencies:
+    apollo-cache "^1.3.4"
+    apollo-cache-inmemory "^1.6.5"
+    apollo-client "^2.6.7"
+    apollo-link "^1.0.6"
+    apollo-link-error "^1.0.3"
+    apollo-link-http "^1.3.1"
+    graphql-tag "^2.4.2"
+    ts-invariant "^0.4.0"
+    tslib "^1.10.0"
+
+=======
+>>>>>>> nextjs
 apollo-cache-control@^0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/apollo-cache-control/-/apollo-cache-control-0.9.1.tgz#2af4c53ef697a87808285a25f2b93ca0f183880c"
@@ -3043,7 +3067,11 @@ apollo-server-errors@^2.4.1:
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.4.1.tgz#16ad49de6c9134bfb2b7dede9842e73bb239dbe2"
   integrity sha512-7oEd6pUxqyWYUbQ9TA8tM0NU/3aGtXSEibo6+txUkuHe7QaxfZ2wHRp+pfT1LC1K3RXYjKj61/C2xEO19s3Kdg==
 
+<<<<<<< HEAD
+apollo-server-lambda@2.12.0:
+=======
 apollo-server-lambda@^2.12.0:
+>>>>>>> nextjs
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/apollo-server-lambda/-/apollo-server-lambda-2.12.0.tgz#3f089cced4b926ccda4e9a014abc3893c42e45ff"
   integrity sha512-yQU1DoYcyiMpcrJJc+TbjqVUBbSXB6Ch2d5vowQSZxLSE5zqzyFDUQLwHwGw1GzghOF2jauaVRt31l/TKy0qOQ==
@@ -3055,7 +3083,11 @@ apollo-server-lambda@^2.12.0:
     apollo-server-types "^0.3.1"
     graphql-tools "^4.0.0"
 
+<<<<<<< HEAD
+apollo-server-micro@2.12.0:
+=======
 apollo-server-micro@^2.12.0:
+>>>>>>> nextjs
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/apollo-server-micro/-/apollo-server-micro-2.12.0.tgz#18d5363429e6c55be42b25bd8b3c2dd898523b48"
   integrity sha512-mk3MPTEcRzsFSn1WYdJerXsDv1+tbPc8H359lG614XTpKTqp+sk20pZOIq4sjMOgYx4I7EOvU+Da63KK8oc09A==
@@ -5921,6 +5953,14 @@ graphql-extensions@^0.11.1:
     "@apollographql/apollo-tools" "^0.4.3"
     apollo-server-env "^2.4.3"
     apollo-server-types "^0.3.1"
+<<<<<<< HEAD
+
+graphql-playground-html@1.6.13:
+  version "1.6.13"
+  resolved "https://registry.yarnpkg.com/graphql-playground-html/-/graphql-playground-html-1.6.13.tgz#16d61416161d96f2725bc37b0b64d135a189f252"
+  integrity sha512-5DNtVeaWrfxrobA2Vp3ypWjAQYGPIXyZ3rdQXy4m4nDJnc4UALPSZRh9y+U4kp8GaoPp1aCgIJerDSRBOT9HnA==
+=======
+>>>>>>> nextjs
 
 graphql-tag@^2.10.3, graphql-tag@^2.9.2:
   version "2.10.3"
