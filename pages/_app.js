@@ -1,5 +1,4 @@
 import "../public/styles.css";
-// import "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css";
 import Head from 'next/head';
 
 export default function MyApp({ Component, pageProps }) {

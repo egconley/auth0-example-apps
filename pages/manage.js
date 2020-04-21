@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { useState, useEffect } from 'react';
 import { ProfilePlaceholder } from '../components/Profile';
 
-const Profile = () => {
+const Manage = () => {
     const [user, setUser] = useState("Stranger");
 
     useEffect(() => {
@@ -47,4 +47,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default Manage;
