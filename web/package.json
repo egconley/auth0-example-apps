@@ -1,0 +1,59 @@
+{
+  "name": "dse-sample-apps",
+  "version": "1.0.0",
+  "description": "DSE Sample Apps",
+  "keywords": [
+    "Auth0",
+    "authentication",
+    "nextjs",
+    "mongodb",
+    "graphql",
+    "apollo",
+    "react",
+    "angular",
+    "vue"
+  ],
+  "author": "Art Rosnovsky <artem@rosnovsky.us>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rosnovsky/auth0-example-apps/issues"
+  },
+  "homepage": "https://github.com/rosnovsky/auth0-example-apps#readme",
+  "private": true,
+  "dependencies": {
+    "apollo-server-lambda": "^2.12.0",
+    "apollo-server-micro": "^2.12.0",
+    "auth0-js": "^9.13.2",
+    "gatsby": "^2.20.25",
+    "gatsby-image": "^2.3.4",
+    "gatsby-plugin-manifest": "^2.3.5",
+    "gatsby-plugin-offline": "^3.1.4",
+    "gatsby-plugin-react-helmet": "^3.2.4",
+    "gatsby-plugin-sharp": "^2.5.6",
+    "gatsby-source-filesystem": "^2.2.4",
+    "gatsby-transformer-sharp": "^2.4.6",
+    "mongodb": "^3.5.6",
+    "netlify-lambda": "^1.6.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.0.0"
+  },
+  "devDependencies": {
+    "prettier": "2.0.4"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "yarn run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "start:lambda": "netlify-lambda serve ../api/*",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  }
+}
