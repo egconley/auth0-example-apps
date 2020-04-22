@@ -1,9 +1,9 @@
-const { ApolloServer } = require("apollo-server-micro");
+const { ApolloServer } = require("apollo-server-lambda");
 const typeDefs = require("./_utils/typedefs");
 const resolvers = require("./_utils/resolvers");
 const connectToMongoDB = require("./_utils/db");
 
-const handler = async function(event, context) {
+exports.handler = async function(event, context) {
     const db = await connectToMongoDB();
     const server = new ApolloServer({
         typeDefs,
@@ -14,17 +14,17 @@ const handler = async function(event, context) {
     });
     return new Promise((yay, nay) => {
         const cb = (err, args) => (err ? nay(err) : yay(args));
-        server.createHandler( { path: '/api/graphql', cors: true } )(event, context, cb);
+        server.createHandler( { path: '/graphql', cors: true } )(event, context, cb);
     });
 };
 
-export const config = {
+const config = {
   api: {
     bodyParser: false,
   },
 };
 
-export default async (req, res) => {
+exports.graphql = async function(req, res){
   if (req.method === 'OPTIONS') {
     return res.status(200).send();
   } else {

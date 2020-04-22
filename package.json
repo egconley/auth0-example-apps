@@ -55,6 +55,7 @@
     "sirv": "^0.4.2"
   },
   "devDependencies": {
+    "netlify-lambda": "^1.4.5",
     "@babel/core": "^7.9.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",

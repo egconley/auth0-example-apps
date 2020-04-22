@@ -1,6 +1,6 @@
-import { initAuth0 } from '@auth0/nextjs-auth0';
+const initAuth0 = require('auth0-js');
 
-export default initAuth0({
+exports.module = initAuth0({
     domain: process.env.AUTH0_DOMAIN,
     clientId: process.env.AUTH0_CLIENT_ID,
     clientSecret: process.env.AUTH0_CLIENT_SECRET,
