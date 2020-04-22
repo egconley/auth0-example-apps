@@ -8,7 +8,7 @@ The purpose of this project is to help Auth0 Developer Support Engineers spin-up
 - React
 - Bootstrap
 - Apollo client for GraphQL
-- Current app screenshots with Microlink.io
+- [Current app screenshots with Netlify](https://open-api.netlify.com/#operation/getDeploy)
 - Screenshot image optimization with Kraken.io
 
 - MongoDB
