@@ -7,7 +7,7 @@ module.exports = () => {
     if (cachedDb && cachedDb.serverConfig.isConnected()) {
         return Promise.resolve(cachedDb);
     }
-    return MongoClient.connect(URI, { useNewUrlParser: true }).then(client => {
+    return MongoClient.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(client => {
         cachedDb = client.db(DB_NAME);
         return cachedDb;
     });

@@ -1,4 +1,4 @@
-import ContentLoader from './node_modules/react-content-loader';
+import ContentLoader from 'react-content-loader';
 
 export const ProfilePlaceholder = () => {
     return (
