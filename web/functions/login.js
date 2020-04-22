@@ -1,4 +1,4 @@
-const auth0 = require('../lib/auth0');
+const auth0 = require('./lib/auth0');
 
 module.exports = async function login(req, res) {
     try {

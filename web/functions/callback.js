@@ -1,4 +1,4 @@
-import auth0 from '../lib/auth0';
+import auth0 from './lib/auth0';
 
 module.exports = async function callback(req, res) {
     try {

@@ -1,4 +1,4 @@
-import auth0 from '../lib/auth0';
+import auth0 from './lib/auth0';
 
 exports.profile = function(req, res) {
     try {
