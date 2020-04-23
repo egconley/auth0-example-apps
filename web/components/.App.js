@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import ContentLoader from 'react-content-loader';
 import { useState, useEffect } from "react";
-import { toDataUrl } from '../lib/screenshots';
+// import { toDataUrl } from '../lib/screenshots';
 
 const App = ({ app }) => {
     const [screenshot, setScreenshot ] = useState();

@@ -1,9 +1,7 @@
 import { Container, Row, Col } from 'reactstrap';
 import Header from '../components/Header';
-import Apps from '../components/Apps';
 import Footer from '../components/Footer';
-import { withApollo } from '../lib/apollo'
-import { useQuery } from '@apollo/react-hooks';
+
 import gql from 'graphql-tag'
 import { useState, useEffect } from 'react';
 import { ContentPlaceholder } from '../components/Apps';

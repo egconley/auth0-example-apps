@@ -1,21 +1,28 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Container, Row, Col } from 'reactstrap';
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import { ContentPlaceholder } from '../../components/Apps';
 
-const IndexPage = () => (
+const IndexPage = ({user}) => {
+
+return (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Container fluid="true" className="container-fluid px-auto mx-auto">
+        <Row className="pb-5">
+          <Col className="d-flex mx-auto justify-content-center">
+            {/* {loading ?  */}
+            <ContentPlaceholder className="mx-auto my-auto" title="Loading..." /> 
+            {/* // : data && data.apps ?
+            //   <Apps apps={data.apps} /> : <ContentPlaceholder className="mx-auto my-auto" title="Hm... This is impossible 🤔"/>
+            // } */}
+          </Col>
+        </Row>
+    </Container>
   </Layout>
-)
+)}
 
 export default IndexPage
