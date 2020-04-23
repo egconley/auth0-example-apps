@@ -13,6 +13,10 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: { connectionString: `mongodb+srv://gqlServer:BduvesuAcdKODc7d@dse-qsom3.mongodb.net/test?retryWrites=true&w=majority`, dbName: `dse`, collection: [`apps`] },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

@@ -13,10 +13,17 @@ import Header from "./header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query allAppsAndSiteTitleQuery {
       site {
         siteMetadata {
           title
+        }
+      }
+      allMongodbDseApps{
+        edges{
+          node{
+            name
+          }
         }
       }
     }
