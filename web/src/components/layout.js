@@ -1,14 +1,8 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from 'reactstrap';
+import logo from '../images/auth0-logo-forlightbg.png';
 
 import Header from "./header"
 
@@ -45,8 +39,8 @@ const Layout = ({ children }) => {
         <Container className="pt-4 my-md-5 pt-md-5 border-top">
             <Row className="container container-fluid mx-auto">
                 <Col className="col-12 col-md">
-                    <a className="mx-auto mb-2" href="https://auth0.com"><img src="/auth0-logo-forlightbg.png" width="50px" alt="Auth0 Logo" /></a>
-                    <p className="mt-2">© 2020 Auth0, Inc </p>
+                    <a className="mx-auto mb-2" href="https://auth0.com"><img src={logo} width="50px" alt="Auth0 Logo" /></a>
+                    <p className="mt-2">Identity is complex. Deal with it.</p>
                 </Col>
                 <Col className="col-6 col-md d-block">
                     <h5>Tools</h5>

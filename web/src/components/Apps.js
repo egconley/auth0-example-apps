@@ -1,7 +1,20 @@
 import { Row } from 'reactstrap';
-import App from '../src/components/App';
+import App from './App';
 import ContentLoader from 'react-content-loader';
 import React from 'react'
+
+const Apps = ({apps}) => {
+    return (
+        <Row className="mx-auto" style={{"width": 90 + "%"}}>
+            {apps.map(app => (
+                <App app={app} key={app.id} />
+                )
+            )}
+        </Row>
+    )
+}
+
+export default Apps;
 
 export const ContentPlaceholder = () => {
     return (

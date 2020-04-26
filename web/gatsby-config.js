@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `DSE Sample Apps`,
@@ -15,7 +19,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-mongodb`,
-      options: { connectionString: `mongodb+srv://gqlServer:BduvesuAcdKODc7d@dse-qsom3.mongodb.net/test?retryWrites=true&w=majority`, dbName: `dse`, collection: [`apps`] },
+      options: { connectionString: process.env.MONGO_URL, dbName: `dse`, collection: [`apps`] },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

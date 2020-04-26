@@ -1,12 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
+import Apps from "../components/Apps"
 import { Container, Row, Col } from 'reactstrap';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { ContentPlaceholder } from '../../components/Apps';
+import { ContentPlaceholder } from '../components/Apps';
 
-const IndexPage = ({user}) => {
+import { graphql } from "gatsby"
+
+const IndexPage = ({data}) => {
+
+  const apps = data.allMongodbDseApps.edges;
+  console.log(apps)
 
 return (
   <Layout>
@@ -14,11 +19,8 @@ return (
     <Container fluid="true" className="container-fluid px-auto mx-auto">
         <Row className="pb-5">
           <Col className="d-flex mx-auto justify-content-center">
-            {/* {loading ?  */}
-            <ContentPlaceholder className="mx-auto my-auto" title="Loading..." /> 
-            {/* // : data && data.apps ?
-            //   <Apps apps={data.apps} /> : <ContentPlaceholder className="mx-auto my-auto" title="Hm... This is impossible 🤔"/>
-            // } */}
+            { data && apps ?
+              <Apps apps={apps} /> : <ContentPlaceholder className="mx-auto my-auto" title="Hm... This is impossible 🤔"/>}
           </Col>
         </Row>
     </Container>
@@ -26,3 +28,25 @@ return (
 )}
 
 export default IndexPage
+
+export const data = graphql`
+  query {
+    allMongodbDseApps{
+        edges{
+          node {
+            name
+            id
+            stack {
+              name
+              url
+            }
+            description
+            quickstart
+            deploy
+            screenshot
+            url
+          }
+        }
+      }
+  }
+`
