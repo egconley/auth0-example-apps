@@ -3,15 +3,42 @@ import {
     CardTitle, Row, Button
 } from 'reactstrap';
 import React from 'react'
-// import { useState, useEffect } from "react";
-// import { toDataUrl } from '../lib/screenshots';
+import { useState, useEffect } from "react";
+import { toDataUrl } from '../../functions/lib/screenshots'
 
 const App = ({ app }) => {
-    console.log(app.node)
+    const [screenshot, setScreenshot] = useState();
+    const refetchScreenshot = async (screenshotUrl) => {
+        console.log("refetching screenshot for " + screenshotUrl)
+        function callback(result){
+            console.log("refetch callback fired")
+            setScreenshot(result);
+            localStorage.setItem(app.name, result);
+            return result;
+        }
+
+        const base64image = await toDataUrl(screenshotUrl, callback);
+        return base64image;
+    }
+
+    useEffect(() => {
+        const isInLocalStorage = localStorage.getItem(app.node.name);
+        const existingTimestamp = localStorage.getItem("timestamp");
+        const currentTimestamp = Date.now();
+
+        if (isInLocalStorage === undefined || isInLocalStorage === null || currentTimestamp - existingTimestamp > 432000000 ) {
+                refetchScreenshot(app.node.screenshot);
+                localStorage.setItem("timestamp", currentTimestamp)
+            }
+            else {
+                setScreenshot(localStorage.getItem(app.node.name));
+            }
+    }, [])
+
     return (
     <>
         <Card style={{"width": 24 + "rem"}} className="mx-auto mt-5">
-            <a href={app.node.url}><CardImg top style={{"minHeight": "200" + "px"}} src={app.node.screenshot} alt={app.node.name} /></a>
+            <a href={app.node.url}><CardImg top style={{"minHeight": "200" + "px"}} src={screenshot} alt={app.node.name} /></a>
             <CardBody>
                 <CardTitle><a href={app.node.url}><h2>{app.node.name}</h2></a></CardTitle>
                 <CardText>{app.node.description}</CardText>

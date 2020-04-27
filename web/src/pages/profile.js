@@ -1,22 +1,12 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Head from 'next/head';
-import { Container, Row, Col, Highlight } from 'reactstrap';
-import { useState, useEffect } from 'react';
-import { ProfilePlaceholder } from '../components/Profile';
+import Header from '../components/header';
+import { Container, Row, Col } from 'reactstrap';
+import React from 'react';
+import ContentLoader from 'react-content-loader';
+import { getProfile } from '../utils/auth';
 
 const Profile = () => {
-    const [user, setUser] = useState("Stranger");
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            const userData = await fetch('/api/profile');
-            const result = await userData.json();
-            setUser(result);
-            return result;
-        }
-        fetchUser();
-    }, [])
+    const user = JSON.parse(getProfile());
 
     return (
         <Container fluid="true" className="container-fluid px-auto mx-auto">
@@ -43,9 +33,27 @@ const Profile = () => {
                     : <Row className="justify-content-center"><ProfilePlaceholder className="mx-auto my-auto" /></Row> }
                 </Col>
             </Row>
-            <Footer />
         </Container>
     )
 }
 
 export default Profile;
+
+export const ProfilePlaceholder = () => {
+    return (
+        <ContentLoader 
+            speed={2}
+            width={600}
+            height={400}
+            viewBox="0 0 600 400"
+            backgroundColor="#f3f3f3"
+            foregroundColor="#ecebeb"
+        >
+            <rect x="50" y="250" rx="3" ry="3" width="500" height="6" /> 
+            <rect x="50" y="272" rx="3" ry="3" width="430" height="6" /> 
+            <rect x="50" y="288" rx="3" ry="3" width="480" height="6" /> 
+            <circle cx="300" cy="110" r="100" />
+        </ContentLoader>
+    )
+}
+

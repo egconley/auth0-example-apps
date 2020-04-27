@@ -11,7 +11,6 @@ import { graphql } from "gatsby"
 const IndexPage = ({data}) => {
 
   const apps = data.allMongodbDseApps.edges;
-  console.log(apps)
 
 return (
   <Layout>
