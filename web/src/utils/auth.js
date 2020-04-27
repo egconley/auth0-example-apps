@@ -20,7 +20,7 @@ const tokens = {
   expiresAt: false,
 }
 
-let user = localStorage.getItem("user", user);
+let user = ls.getItem("user", user);
 
 export const isAuthenticated = () => {
   if (!isBrowser) {
