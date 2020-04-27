@@ -1,6 +1,6 @@
 import auth0 from "auth0-js"
 import { navigate } from "gatsby"
-import ls from "local-storage";
+import ls from 'local-storage';
 
 const isBrowser = typeof window !== "undefined"
 
@@ -20,7 +20,7 @@ const tokens = {
   expiresAt: false,
 }
 
-let user = ls.getItem("user", user);
+let user = {}
 
 export const isAuthenticated = () => {
   if (!isBrowser) {
@@ -72,7 +72,11 @@ export const handleAuthentication = () => {
 }
 
 export const getProfile = () => {
-  return user;
+  const getUser = ls.getItem("user", user);
+  if(getUser !== null && getUser !== undefined){
+    return getUser;  
+  }
+  return handleAuthentication();
 }
 
 export const logout = () => {
