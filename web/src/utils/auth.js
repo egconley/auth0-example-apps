@@ -19,7 +19,7 @@ const tokens = {
   expiresAt: false,
 }
 
-let user = {}
+let user = localStorage.getItem("user", user);
 
 export const isAuthenticated = () => {
   if (!isBrowser) {
@@ -71,11 +71,7 @@ export const handleAuthentication = () => {
 }
 
 export const getProfile = () => {
-  const getUser = localStorage.getItem("user", user);
-  if(getUser !== null && getUser !== undefined){
-    return getUser;  
-  }
-  return handleAuthentication();
+  return user;
 }
 
 export const logout = () => {
