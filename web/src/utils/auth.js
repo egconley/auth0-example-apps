@@ -1,6 +1,6 @@
 import auth0 from "auth0-js"
 import { navigate } from "gatsby"
-import ls from 'local-storage';
+import ls from "local-storage"
 
 const isBrowser = typeof window !== "undefined"
 
@@ -72,11 +72,11 @@ export const handleAuthentication = () => {
 }
 
 export const getProfile = () => {
-  const getUser = ls.get("user", user);
-  if(getUser !== null && getUser !== undefined){
-    return getUser;  
+  const getUser = ls.get("user", user)
+  if (getUser !== null && getUser !== undefined) {
+    return getUser
   }
-  return handleAuthentication();
+  return handleAuthentication()
 }
 
 export const logout = () => {

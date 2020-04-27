@@ -1,10 +1,10 @@
-import auth0 from './lib/auth0';
+import auth0 from "./lib/auth0"
 
 module.exports = async function logout(req, res) {
-    try {
-        await auth0.handleLogout(req, res);
-    } catch (error) {
-        console.error(error);
-        res.status(error.status || 400).end(error.message);
-    }
+  try {
+    await auth0.handleLogout(req, res)
+  } catch (error) {
+    console.error(error)
+    res.status(error.status || 400).end(error.message)
+  }
 }

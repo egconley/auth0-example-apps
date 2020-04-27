@@ -19,7 +19,11 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-mongodb`,
-      options: { connectionString: process.env.MONGO_URL, dbName: `dse`, collection: [`apps`] },
+      options: {
+        connectionString: process.env.MONGO_URL,
+        dbName: `dse`,
+        collection: [`apps`],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

@@ -1,51 +1,57 @@
 import React from "react"
 import Apps from "../components/Apps"
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from "reactstrap"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { ContentPlaceholder } from '../components/Apps';
+import { ContentPlaceholder } from "../components/Apps"
 
 import { graphql } from "gatsby"
 
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
+  const apps = data.allMongodbDseApps.edges
 
-  const apps = data.allMongodbDseApps.edges;
-
-return (
-  <Layout>
-    <SEO title="Home" />
-    <Container fluid="true" className="container-fluid px-auto mx-auto">
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Container fluid="true" className="container-fluid px-auto mx-auto">
         <Row className="pb-5">
           <Col className="d-flex mx-auto justify-content-center">
-            { data && apps ?
-              <Apps apps={apps} /> : <ContentPlaceholder className="mx-auto my-auto" title="Hm... This is impossible 🤔"/>}
+            {data && apps ? (
+              <Apps apps={apps} />
+            ) : (
+              <ContentPlaceholder
+                className="mx-auto my-auto"
+                title="Hm... This is impossible 🤔"
+              />
+            )}
           </Col>
         </Row>
-    </Container>
-  </Layout>
-)}
+      </Container>
+    </Layout>
+  )
+}
 
 export default IndexPage
 
 export const data = graphql`
   query {
-    allMongodbDseApps{
-        edges{
-          node {
+    allMongodbDseApps {
+      edges {
+        node {
+          name
+          id
+          stack {
             name
-            id
-            stack {
-              name
-              url
-            }
-            description
-            quickstart
-            deploy
-            screenshot
             url
           }
+          description
+          quickstart
+          deploy
+          screenshot
+          url
         }
       }
+    }
   }
 `

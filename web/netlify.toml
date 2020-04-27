@@ -1,2 +1,8 @@
 [[plugins]]
 package = "netlify-plugin-gatsby-cache"
+
+[build]
+base = "/"
+command = "yarn build"
+[context.production]
+    publish = "public/"
