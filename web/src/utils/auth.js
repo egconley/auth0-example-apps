@@ -1,5 +1,6 @@
 import auth0 from "auth0-js"
 import { navigate } from "gatsby"
+import ls from "local-storage";
 
 const isBrowser = typeof window !== "undefined"
 
