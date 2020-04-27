@@ -27,7 +27,7 @@ export const isAuthenticated = () => {
     return
   }
 
-  return localStorage.getItem("isLoggedIn") === "true"
+  return ls.get("isLoggedIn") === "true"
 }
 
 export const login = () => {
@@ -51,8 +51,8 @@ const setSession = (cb = () => {}) => (err, authResult) => {
     tokens.idToken = authResult.idToken
     tokens.expiresAt = expiresAt
     user = authResult.idTokenPayload
-    localStorage.setItem("isLoggedIn", true)
-    localStorage.setItem("user", JSON.stringify(user))
+    ls.set("isLoggedIn", true)
+    ls.set("user", JSON.stringify(user))
     navigate("/")
     cb()
   }
@@ -72,7 +72,7 @@ export const handleAuthentication = () => {
 }
 
 export const getProfile = () => {
-  const getUser = ls.getItem("user", user);
+  const getUser = ls.get("user", user);
   if(getUser !== null && getUser !== undefined){
     return getUser;  
   }
@@ -80,7 +80,7 @@ export const getProfile = () => {
 }
 
 export const logout = () => {
-  localStorage.setItem("isLoggedIn", false)
-  localStorage.setItem("user", null)
+  ls.set("isLoggedIn", false)
+  ls.set("user", null)
   auth.logout()
 }
