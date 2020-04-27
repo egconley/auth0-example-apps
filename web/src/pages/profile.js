@@ -1,12 +1,15 @@
 import Header from '../components/header';
 import { Container, Row, Col } from 'reactstrap';
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContentLoader from 'react-content-loader';
 import { getProfile } from '../utils/auth';
 
 const Profile = () => {
+    let user;
 
-    const user = JSON.parse(getProfile());
+    useEffect(() => {
+        user = JSON.parse(getProfile())
+    }, [])
 
     return (
         <Container fluid="true" className="container-fluid px-auto mx-auto">
