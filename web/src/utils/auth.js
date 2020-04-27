@@ -71,7 +71,11 @@ export const handleAuthentication = () => {
 }
 
 export const getProfile = () => {
-  return localStorage.getItem("user", user) ? localStorage.getItem("user", user) : handleAuthentication();
+  const getUser = localStorage.getItem("user", user);
+  if(getUser !== null && getUser !== undefined){
+    return getUser;  
+  }
+  return handleAuthentication();
 }
 
 export const logout = () => {
