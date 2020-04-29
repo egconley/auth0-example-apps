@@ -56,6 +56,9 @@ export const data = graphql`
           current
         }
         deploy
+        quickstart
+        docs
+        url
         _id
       }
       }

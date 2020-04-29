@@ -1,3 +1,4 @@
+const { createFilePath } = require(`gatsby-source-filesystem`)
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -6,8 +7,20 @@
 
 // You can delete this file if you're not using it
 
-const tracer = require('ls-trace').init({
-    experimental: {
-      b3: true
-    }
-  })
+// exports.onCreateNode = ({ node, getNode }) => {
+//   if (node.internal.type === `SanityApp`) {
+//     const fileNode = getNode(node)
+//     console.log(`\n`, fileNode)
+  
+//   }
+// }
+
+exports.onCreateNode = ({ node }) => {
+  if (node.internal.type === `SanityApp`) {
+    console.log(createFilePath({ node, basePath: `pages` }))
+  }
+}
+
+
+
+

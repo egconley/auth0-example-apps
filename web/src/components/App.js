@@ -31,23 +31,23 @@ const App = ({ app }) => {
           <CardText>{app.node._rawDescription[0].children[0].text}</CardText>
           <Row className="mx-auto justify-content-between">
             <p>
-              <a href={app.node.technology.slug.current} className="text-muted">
+              <a href={app.node.quickstart} className="text-muted">
                 Quickstart
               </a>
             </p>
             <p>
-              <a href={app.node.technology.slug.current} className="text-muted">
+              <a href={app.node.docs} className="text-muted">
                 Docs
               </a>
             </p>
           </Row>
           <Row className="mx-auto justify-content-center mb-3">
-            <a href={app.node.technology.slug.current} className="deploy">
+            <a href={app.node.deploy} className="deploy">
               <img src="https://zeit.co/button" alt="Deploy to ZEIT Now" />
             </a>
           </Row>
           <Row className="mx-auto justify-content-center mb-3">
-            <Button className="btn-block btn-light" href={app.node.technology.slug.current}>
+            <Button className="btn-block btn-light" href={app.node.url}>
               {app.node.title} &rarr;
             </Button>
           </Row>

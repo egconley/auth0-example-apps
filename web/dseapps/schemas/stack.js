@@ -4,7 +4,7 @@ export default {
   name: 'stack',
   title: 'Stack',
   type: 'document',
-  BsCodeSlash,
+  icon: BsCodeSlash,
   fields: [
     {
       name: 'title',
@@ -20,10 +20,36 @@ export default {
         maxLength: 100
       }
     },
+    {
+      name: 'languages',
+      title: 'Languages',
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [{
+          type: 'language'
+        }]
+      }]
+    },
+    {
+      name: 'docs',
+      title: 'Stack Docs URL',
+      type: 'url'
+    },
+    {
+      name: 'logo',
+      title: 'Stack Logo',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
   ],
   preview: {
     select: {
       title: 'title',
+      media: 'logo',
+      subtitle: 'languages.0.title'
     }
   }
 }

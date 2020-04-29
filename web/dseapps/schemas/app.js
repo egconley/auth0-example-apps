@@ -4,7 +4,7 @@ export default {
   name: 'app',
   title: 'App',
   type: 'document',
-  GrAppleAppStore,
+  icon: GrAppleAppStore,
   fields: [
     {
       name: 'title',
@@ -12,18 +12,29 @@ export default {
       type: 'string'
     },
     {
+      name: 'url',
+      title: 'Site URL',
+      type: 'url'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 100
+        maxLength: 100,
       }
     },
     {
       name: 'description',
       title: 'Description',
       type: 'blockContent'
+    },
+    {
+      name: 'technology',
+      title: 'Technology',
+      type: 'reference',
+      to: [{type: 'stack'}]
     },
     {
       name: 'screenshot',
@@ -33,33 +44,28 @@ export default {
         hotspot: true
       }
     },
+
     {
-      name: 'technology',
-      title: 'Technology',
-      type: 'reference',
-      to: [{type: 'stack'}]
+      name: 'quickstart',
+      title: 'Auth0 Quickstart URL',
+      type: 'url'
+    },
+    {
+      name: 'docs',
+      title: 'Auth0 Docs URL',
+      type: 'url'
     },
     {
       name: 'deploy',
-      title: 'Deploy',
+      title: 'Deploy URL',
       type: 'url'
     },
-    
   ],
   preview: {
     select: {
       title: 'title',
       media: 'screenshot',
-      subtitle: 'technology.title',
+      subtitle: 'technology.title'
     },
-    prepare(selection) {
-      const stack = [selection.stack0, selection.stack1].filter(Boolean).join(', ')
-
-      return {
-        title: `${selection.title}`,
-        subtitle: stack,
-        media: selection.media
-      }
-    }
   }
 }

@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import blockContent from './blockContent'
 import app from './app'
 import stack from './stack'
+import language from './language'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -19,6 +20,7 @@ export default createSchema({
     // in the studio.
     app,
     stack,
+    language,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent
