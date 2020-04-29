@@ -14,7 +14,7 @@ const App = ({ app }) => {
   return (
     <>
       <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
-        <a href={app.node.slug}>
+        <a href={app.node.slug.current}>
           <CardImg
             top
             style={{ minHeight: "200" + "px" }}
@@ -31,23 +31,23 @@ const App = ({ app }) => {
           <CardText>{app.node._rawDescription[0].children[0].text}</CardText>
           <Row className="mx-auto justify-content-between">
             <p>
-              <a href={app.node.stack[0].url} className="text-muted">
+              <a href={app.node.technology.slug.current} className="text-muted">
                 Quickstart
               </a>
             </p>
             <p>
-              <a href={app.node.stack[0].url} className="text-muted">
+              <a href={app.node.technology.slug.current} className="text-muted">
                 Docs
               </a>
             </p>
           </Row>
           <Row className="mx-auto justify-content-center mb-3">
-            <a href={app.node.stack[0].url} className="deploy">
+            <a href={app.node.technology.slug.current} className="deploy">
               <img src="https://zeit.co/button" alt="Deploy to ZEIT Now" />
             </a>
           </Row>
           <Row className="mx-auto justify-content-center mb-3">
-            <Button className="btn-block btn-light" href={app.node.stack[0].url}>
+            <Button className="btn-block btn-light" href={app.node.technology.slug.current}>
               {app.node.title} &rarr;
             </Button>
           </Row>

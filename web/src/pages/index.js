@@ -38,26 +38,26 @@ export const data = graphql`
   query {
   allSanityApp {
     edges {
-      node{
+      node {
         title
-      screenshot {
-        asset {
-          url
+        screenshot {
+          asset {
+            url
+          }
         }
-      }
-      _rawDescription(resolveReferences: {maxDepth: 5})
-      stack {
-        title
-        url
+        _rawDescription(resolveReferences: {maxDepth: 5})
+        technology {
+          title
+          slug {
+            current
+          }
+        }
         slug {
           current
         }
+        deploy
+        _id
       }
-      slug {
-        current
-      }
-      _id
-    }
       }
     }
   }
