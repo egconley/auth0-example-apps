@@ -9,12 +9,13 @@ import {
 } from "reactstrap"
 import React from "react"
 
+
 const App = ({ app }) => {
-  console.log(app.node)
+  const slug = `app/${app.node.slug.current}`
   return (
     <>
       <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
-        <a href={app.node.slug.current}>
+        <a href={slug}>
           <CardImg
             top
             style={{ minHeight: "200" + "px" }}
@@ -24,7 +25,7 @@ const App = ({ app }) => {
         </a>
         <CardBody>
           <CardTitle>
-            <a href={app.node.slug.current}>
+            <a href={slug}>
               <h2>{app.node.title}</h2>
             </a>
           </CardTitle>
