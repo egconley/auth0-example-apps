@@ -22,6 +22,7 @@
   "dependencies": {
     "auth0-js": "^9.13.2",
     "bootstrap": "^4.4.1",
+    "core-js": "^3.6.5",
     "gatsby": "^2.20.25",
     "gatsby-cli": "^2.11.15",
     "gatsby-image": "^2.3.4",

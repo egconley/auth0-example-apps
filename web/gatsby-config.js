@@ -1,10 +1,3 @@
-// NOTE: This must be at the top of your file, before any imports.
-const tracer = require('ls-trace').init({
-  experimental: {
-    b3: true
-  }
-})
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })

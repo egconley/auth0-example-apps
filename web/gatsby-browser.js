@@ -5,3 +5,4 @@
  */
 
 // You can delete this file if you're not using it
+// NOTE: This must be at the top of your file, before any imports.
