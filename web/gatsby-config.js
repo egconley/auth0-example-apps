@@ -1,3 +1,10 @@
+// NOTE: This must be at the top of your file, before any imports.
+const tracer = require('ls-trace').init({
+  experimental: {
+    b3: true
+  }
+})
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -18,11 +25,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-mongodb`,
+      resolve: 'gatsby-source-sanity',
       options: {
-        connectionString: process.env.MONGO_URL,
-        dbName: `dse`,
-        collection: [`apps`],
+        projectId: '76jo7qos',
+        dataset: 'production',
+
+        // a token with read permissions is required
+        // if you have a private dataset
+        token: process.env.MY_SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: 'default',
       },
     },
     `gatsby-transformer-sharp`,

@@ -15,13 +15,6 @@ const Layout = ({ children }) => {
           title
         }
       }
-      allMongodbDseApps {
-        edges {
-          node {
-            name
-          }
-        }
-      }
     }
   `)
 

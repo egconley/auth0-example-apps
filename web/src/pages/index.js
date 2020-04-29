@@ -9,7 +9,7 @@ import { ContentPlaceholder } from "../components/Apps"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
-  const apps = data.allMongodbDseApps.edges
+  const apps = data.allSanityApp.edges
 
   return (
     <Layout>
@@ -36,22 +36,26 @@ export default IndexPage
 
 export const data = graphql`
   query {
-    allMongodbDseApps {
-      edges {
-        node {
-          name
-          id
-          stack {
-            name
-            url
-          }
-          description
-          quickstart
-          deploy
-          screenshot
+  allSanityApp {
+    edges {
+      node {
+        id
+        title
+        slug {
+          current
+        }
+        stack {
+          title
           url
+        }
+        description {
+          sanityChildren {
+            text
+          }
         }
       }
     }
   }
+}
+
 `
