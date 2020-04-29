@@ -1,7 +1,10 @@
+import { BsCodeSlash } from 'react-icons/bs'
+
 export default {
   name: 'stack',
   title: 'Stack',
-  type: 'object',
+  type: 'document',
+  BsCodeSlash,
   fields: [
     {
       name: 'title',
@@ -17,18 +20,10 @@ export default {
         maxLength: 100
       }
     },
-    {
-      name: 'docs',
-      title: 'Docs',
-      type: 'reference',
-      to: [{type: 'tech'}]
-    },
   ],
   preview: {
     select: {
-      subtitle: 'title',
-      title: 'tech.title',
-      media: 'tech.screenshot'
+      title: 'title',
     }
   }
 }

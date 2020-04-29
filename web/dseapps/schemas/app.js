@@ -1,10 +1,10 @@
-import icon from 'react-icons/lib/md/local-movies'
+import { GrAppleAppStore } from 'react-icons/gr'
 
 export default {
   name: 'app',
   title: 'App',
   type: 'document',
-  icon,
+  GrAppleAppStore,
   fields: [
     {
       name: 'title',
@@ -34,18 +34,23 @@ export default {
       }
     },
     {
-      name: 'stack',
-      title: 'Stack',
-      type: 'array',
-      of: [{type: 'tech'}]
+      name: 'technology',
+      title: 'Technology',
+      type: 'reference',
+      to: [{type: 'stack'}]
     },
+    {
+      name: 'deploy',
+      title: 'Deploy',
+      type: 'url'
+    },
+    
   ],
   preview: {
     select: {
       title: 'title',
       media: 'screenshot',
-      stack0: 'tech.0.title',
-      stack1: 'tech.1.title'
+      subtitle: 'technology.title',
     },
     prepare(selection) {
       const stack = [selection.stack0, selection.stack1].filter(Boolean).join(', ')
