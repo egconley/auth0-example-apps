@@ -26,16 +26,6 @@ export default {
       type: 'blockContent'
     },
     {
-      name: 'releaseDate',
-      title: 'Release date',
-      type: 'datetime'
-    },
-    {
-      name: 'popularity',
-      title: 'Popularity',
-      type: 'number'
-    },
-    {
       name: 'screenshot',
       title: 'Screenshot',
       type: 'image',
@@ -53,18 +43,15 @@ export default {
   preview: {
     select: {
       title: 'title',
-      date: 'releaseDate',
       media: 'screenshot',
       stack0: 'tech.0.title',
       stack1: 'tech.1.title'
     },
     prepare(selection) {
-      const year = selection.date && selection.date.split('-')[0]
       const stack = [selection.stack0, selection.stack1].filter(Boolean).join(', ')
 
       return {
-        title: `${selection.title} ${year ? `(${year})` : ''}`,
-        date: selection.date,
+        title: `${selection.title}`,
         subtitle: stack,
         media: selection.media
       }

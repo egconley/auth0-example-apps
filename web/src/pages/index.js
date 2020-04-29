@@ -38,24 +38,27 @@ export const data = graphql`
   query {
   allSanityApp {
     edges {
-      node {
-        id
+      node{
         title
+      screenshot {
+        asset {
+          url
+        }
+      }
+      _rawDescription(resolveReferences: {maxDepth: 5})
+      stack {
+        title
+        url
         slug {
           current
         }
-        stack {
-          title
-          url
-        }
-        description {
-          sanityChildren {
-            text
-          }
-        }
+      }
+      slug {
+        current
+      }
+      _id
+    }
       }
     }
   }
-}
-
 `

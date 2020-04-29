@@ -9,6 +9,15 @@ export default {
       type: 'string'
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 100
+      }
+    },
+    {
       name: 'docs',
       title: 'Docs',
       type: 'reference',

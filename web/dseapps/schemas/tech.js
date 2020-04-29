@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'title',
+      title: 'Tech Stack',
       type: 'string',
       description: 'Tech stack'
     },
@@ -17,7 +17,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'name',
+        source: 'title',
         maxLength: 100
       }
     },
@@ -28,6 +28,6 @@ export default {
     }
   ],
   preview: {
-    select: {title: 'name', url: 'url'}
+    select: {title: 'title', url: 'url'}
   }
 }
