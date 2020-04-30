@@ -19,7 +19,7 @@ const AppPage = ({ data }) => {
     
     return (
         <Layout>
-            <SEO title="App" />
+            <SEO title={app.title} />
             <Container fluid="true" className="container-fluid px-auto mx-auto">
                 <Row className="pb-5">
                     <Col className="d-flex mx-auto justify-content-center">
