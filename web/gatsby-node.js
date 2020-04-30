@@ -1,19 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
-
-// exports.onCreateNode = ({ node, getNode }) => {
-//   if (node.internal.type === `SanityApp`) {
-//     const fileNode = getNode(node)
-//     console.log(`\n`, fileNode)
-  
-//   }
-// }
-
 const createAppPages = async (graphql, actions, reporter) => {
   const { createPage } = actions
   const result = await graphql(`
@@ -56,7 +40,7 @@ const createAppPages = async (graphql, actions, reporter) => {
     const path = `/app/${edge.node.slug.current}`
     createPage({
       path,
-      component: require.resolve("./src/templates/app.js"),
+      component: require.resolve("./src/pages/app.js"),
       context: { id: edge.node._id },
     })
   })

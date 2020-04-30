@@ -1,7 +1,6 @@
 import React from "react"
 import Apps from "../components/Apps"
 import { Container, Row, Col } from "reactstrap"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ContentPlaceholder } from "../components/Apps"

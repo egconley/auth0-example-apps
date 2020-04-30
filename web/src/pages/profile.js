@@ -5,6 +5,10 @@ import ContentLoader from "react-content-loader"
 import { getProfile } from "../utils/auth"
 
 const Profile = () => {
+
+  ///
+  /// Assignments to the 'user' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect  react-hooks/exhaustive-deps
+  
   let user
 
   useEffect(() => {

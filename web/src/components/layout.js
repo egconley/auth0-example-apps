@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "reactstrap"
 import logo from "../images/auth0-logo-forlightbg.png"
-import { getProfile } from "../utils/auth"
 
 import Header from "./header"
 
