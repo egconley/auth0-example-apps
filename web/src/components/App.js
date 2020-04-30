@@ -18,7 +18,7 @@ const App = ({ app }) => {
         <a href={slug}>
           <CardImg
             top
-            style={{ minHeight: "200" + "px" }}
+            style={{ minHeight: "200px" }}
             src={app.node.screenshot.asset.url}
             alt={app.node.title}
           />

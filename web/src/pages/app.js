@@ -27,7 +27,7 @@ const AppPage = ({ data }) => {
                             <a href={app.slug.current}>
                             <CardImg
                                 top
-                                style={{ minHeight: "200" + "px" }}
+                                style={{ minHeight: "200px" }}
                                 src={app.screenshot.asset.url}
                                 alt={app.title}
                             />

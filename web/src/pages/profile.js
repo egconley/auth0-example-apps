@@ -1,19 +1,25 @@
 import Header from "../components/header"
 import { Container, Row, Col } from "reactstrap"
-import React, { useEffect } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import ContentLoader from "react-content-loader"
 import { getProfile } from "../utils/auth"
 
 const Profile = () => {
+  const userProfile = useRef(getProfile());
+  const user = userProfile.current;
+
 
   ///
   /// Assignments to the 'user' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect  react-hooks/exhaustive-deps
   
-  let user
+  // useEffect(() => {
+  //   async function fetchProfile() {
+  //     user.current = await getProfile();
+  //     console.log(user.current)
+  //   }
+  //   fetchProfile();
+  // }, [user])
 
-  useEffect(() => {
-    user = JSON.parse(getProfile())
-  }, [])
 
   return (
     <Container fluid="true" className="container-fluid px-auto mx-auto">
