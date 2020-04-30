@@ -20,7 +20,7 @@ const Header = ({ siteTitle }) => {
           width="80px"
           alt="Auth0 logo"
         />
-        <NavbarBrand href='/'>{siteTitle}</NavbarBrand>
+        <NavbarBrand><Link to='/' className="text-dark">{siteTitle}</Link></NavbarBrand>
         <Nav className="ml-auto" navbar>
           {isAuthenticated() ? (
             <>

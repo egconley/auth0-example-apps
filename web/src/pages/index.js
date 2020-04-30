@@ -50,6 +50,11 @@ export const data = graphql`
           slug {
             current
           }
+          logo {
+            asset {
+              url
+            }
+          }
         }
         slug {
           current

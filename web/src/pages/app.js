@@ -16,6 +16,7 @@ import SEO from "../components/seo"
 
 const AppPage = ({ data }) => {
     const app = data.sanityApp
+    console.log(app.technology)
     
     return (
         <Layout>
@@ -24,19 +25,15 @@ const AppPage = ({ data }) => {
                 <Row className="pb-5">
                     <Col className="d-flex mx-auto justify-content-center">
                         <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
-                            <a href={app.slug.current}>
                             <CardImg
                                 top
                                 style={{ minHeight: "200px" }}
                                 src={app.screenshot.asset.url}
                                 alt={app.title}
                             />
-                            </a>
                             <CardBody>
                                 <CardTitle>
-                                    <a href={app.slug.current}>
                                     <h2>{app.title}</h2>
-                                    </a>
                                 </CardTitle>
                                 <CardText>{app._rawDescription[0].children[0].text}</CardText>
                                 <Row className="mx-auto justify-content-between">
@@ -49,6 +46,11 @@ const AppPage = ({ data }) => {
                                     <a href={app.docs} className="text-muted">
                                         Docs
                                     </a>
+                                    </p>
+                                </Row>
+                                <Row className="mx-auto justify-content-between">
+                                    <p className="text-muted">
+                                        Tech Stack: <img src={app.technology.logo.asset.url} width="20px" alt={app.technology.title} />
                                     </p>
                                 </Row>
                                 <Row className="mx-auto justify-content-center mb-3">
@@ -86,6 +88,11 @@ query AppPageQuery($id: String){
             title
             slug {
                 current
+            }
+            logo {
+                asset {
+                    url
+                }
             }
         }
         slug {

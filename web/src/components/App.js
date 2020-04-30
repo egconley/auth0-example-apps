@@ -8,6 +8,7 @@ import {
   Button,
 } from "reactstrap"
 import React from "react"
+import { Link } from 'gatsby'
 
 
 const App = ({ app }) => {
@@ -15,19 +16,19 @@ const App = ({ app }) => {
   return (
     <>
       <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
-        <a href={slug}>
+        <Link to={slug}>
           <CardImg
             top
             style={{ minHeight: "200px" }}
             src={app.node.screenshot.asset.url}
             alt={app.node.title}
           />
-        </a>
+        </Link>
         <CardBody>
           <CardTitle>
-            <a href={slug}>
+            <Link to={slug}>
               <h2>{app.node.title}</h2>
-            </a>
+            </Link>
           </CardTitle>
           <CardText>{app.node._rawDescription[0].children[0].text}</CardText>
           <Row className="mx-auto justify-content-between">
