@@ -22,6 +22,7 @@ const App = ({ app }) => {
             style={{ minHeight: "200px" }}
             src={app.node.screenshot.asset.url}
             alt={app.node.title}
+            loading="lazy"
           />
         </Link>
         <CardBody>
