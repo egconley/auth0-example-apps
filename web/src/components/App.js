@@ -7,12 +7,34 @@ import {
   Row,
   Button,
 } from "reactstrap"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from 'gatsby'
 
 
 const App = ({ app }) => {
+  const [siteScreenshot, setSiteScreenshot] = useState();
+
   const slug = `app/${app.node.slug.current}`
+
+  useEffect(() => {
+    // This is a temporary proof-of concept.
+
+    // On deploy, netlify should run a webhook, touching the below endpoint. This would trigger a serverless function, which in turn would fetch the latest screenshot of all deployed sites and put them into corresponding Sanity objects. Somewhere inbetween it could be worth it to resize/compress sccreenshots with kraken.io.
+
+    // For now, this code just fetches a single screenshot which acts as a placeholder.
+    const screenshot = async () => {
+      return fetch("https://dse.netlify.app/.netlify/functions/screenshot", { headers: { "Accept": "application/json" } })
+          .then(response => response.json())
+          .then(data => {
+              setSiteScreenshot(data);
+              })
+      .catch(error => ({ statusCode: 422, body: String(error) }));
+  };
+  screenshot();
+  }, [])
+
+console.log(siteScreenshot);
+
   return (
     <>
       <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
@@ -20,7 +42,7 @@ const App = ({ app }) => {
           <CardImg
             top
             style={{ minHeight: "200px" }}
-            src={app.node.screenshot.asset.url}
+            src={siteScreenshot}
             alt={app.node.title}
             loading="lazy"
           />
@@ -46,7 +68,7 @@ const App = ({ app }) => {
           </Row>
           <Row className="mx-auto justify-content-center mb-3">
             <a href={app.node.deploy} className="deploy">
-              <img src="https://zeit.co/button" alt="Deploy to ZEIT Now" />
+              <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
             </a>
           </Row>
           <Row className="mx-auto justify-content-center mb-3">

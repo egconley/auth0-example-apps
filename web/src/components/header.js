@@ -22,6 +22,7 @@ const Header = ({ siteTitle }) => {
         />
         <NavbarBrand><Link to='/' className="text-error">{siteTitle}</Link></NavbarBrand>
         <Nav className="ml-auto" navbar>
+        <Link to ="/about" className="my-auto mr-3">About</Link>
           {isAuthenticated() ? (
             <>
               <Link to="/profile">
