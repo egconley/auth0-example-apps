@@ -1,5 +1,7 @@
 # Auth0 Sample Apps
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a92a4837469d4c0a8fe947e032940a67)](https://app.codacy.com/manual/rosnovsky/auth0-example-apps?utm_source=github.com&utm_medium=referral&utm_content=rosnovsky/auth0-example-apps&utm_campaign=Badge_Grade_Dashboard)
+
 The purpose of this project is to help [Auth0](https://auth0.com) Developer Support Engineers spin-up, troubleshoot, and experiment with a variety of application they encounter daily. Work in progress
 
 ## Flow
