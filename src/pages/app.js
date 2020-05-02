@@ -13,7 +13,7 @@ import React, { useState, useEffect} from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
-import { ProfilePlaceholder } from "../pages/profile"
+import { ProfilePlaceholder } from "./profile"
 
 const AppPage = ({ data }) => {
     const [siteScreenshot, setSiteScreenshot] = useState();

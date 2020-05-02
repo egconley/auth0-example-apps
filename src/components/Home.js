@@ -1,8 +1,8 @@
 import React from "react"
-import Apps from "../components/Apps"
+import Apps from "./Apps"
 import { Container, Row, Col } from "reactstrap"
-import SEO from "../components/seo"
-import { ContentPlaceholder } from "../components/Apps"
+import SEO from "./seo"
+import { ContentPlaceholder } from "./Apps"
 import { graphql, useStaticQuery } from "gatsby"
 
 const Home = () =>{
