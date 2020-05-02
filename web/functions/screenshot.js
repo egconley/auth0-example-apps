@@ -5,8 +5,7 @@ const fetch = require("node-fetch");
 const SITE_ID="001b81f1-b7fb-4c73-8247-2bb7263d59cd"
 const DEPLOYS_ENDPOINT = `https://api.netlify.com/api/v1/sites/${SITE_ID}/deploys`;
 
-// Token belong in .env
-const TOKEN = "473d91b661666c423d22fa5696d8b60c95039cd21500abadfe3b237317dbcbd7"
+const TOKEN = process.env.NETLIFY_API_TOKEN
 
 exports.handler = async (event, context) => {
     // Making two requests is not ideal :(
