@@ -1,6 +1,9 @@
 # Auth0 Sample Apps
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a92a4837469d4c0a8fe947e032940a67)](https://app.codacy.com/manual/rosnovsky/auth0-example-apps?utm_source=github.com&utm_medium=referral&utm_content=rosnovsky/auth0-example-apps&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a92a4837469d4c0a8fe947e032940a67)](https://app.codacy.com/manual/rosnovsky/auth0-example-apps?utm_source=github.com&utm_medium=referral&utm_content=rosnovsky/auth0-example-apps&utm_campaign=Badge_Grade_Dashboard) ![](https://david-dm.org/rosnovsky/auth0-example.apps.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/f91ff3d7-bb7e-41a5-b11a-fb2943beea18/deploy-status)](https://app.netlify.com/sites/dse/deploys) [![Build Status](https://travis-ci.org/rosnovsky/auth0-example-apps.svg?branch=master)](https://travis-ci.org/rosnovsky/auth0-example-apps) [![codecov](https://codecov.io/gh/rosnovsky/auth0-example-apps/branch/master/graph/badge.svg)](https://codecov.io/gh/rosnovsky/auth0-example-apps)
+
+![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_accessibility.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_best-practices.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_performance.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_seo.svg.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_pwa.svg)
+
 
 The purpose of this project is to help [Auth0](https://auth0.com) Developer Support Engineers spin-up, troubleshoot, and experiment with a variety of application they encounter daily. Work in progress
 
