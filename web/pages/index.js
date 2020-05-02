@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "reactstrap"
-import Header from "../components/Header"
+import Header from "../components/header"
 import Footer from "../components/Footer"
 
 import gql from "graphql-tag"
