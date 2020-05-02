@@ -1,7 +1,6 @@
 import React from "react"
 import Apps from "../components/Apps"
 import { Container, Row, Col } from "reactstrap"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ContentPlaceholder } from "../components/Apps"
@@ -9,7 +8,7 @@ import { ContentPlaceholder } from "../components/Apps"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
-  const apps = data.allMongodbDseApps.edges
+  const apps = data.allSanityApp.edges
 
   return (
     <Layout>
@@ -36,21 +35,36 @@ export default IndexPage
 
 export const data = graphql`
   query {
-    allMongodbDseApps {
-      edges {
-        node {
-          name
-          id
-          stack {
-            name
+  allSanityApp {
+    edges {
+      node {
+        title
+        screenshot {
+          asset {
             url
           }
-          description
-          quickstart
-          deploy
-          screenshot
-          url
         }
+        _rawDescription(resolveReferences: {maxDepth: 5})
+        technology {
+          title
+          slug {
+            current
+          }
+          logo {
+            asset {
+              url
+            }
+          }
+        }
+        slug {
+          current
+        }
+        deploy
+        quickstart
+        docs
+        url
+        _id
+      }
       }
     }
   }

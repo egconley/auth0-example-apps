@@ -8,7 +8,7 @@ import { login, logout, isAuthenticated, getProfile } from "../utils/auth"
 const Header = ({ siteTitle }) => {
   let user = {}
   if (isAuthenticated()) {
-    user = JSON.parse(getProfile())
+    user = getProfile()
   }
 
   return (
@@ -20,7 +20,7 @@ const Header = ({ siteTitle }) => {
           width="80px"
           alt="Auth0 logo"
         />
-        <NavbarBrand>{siteTitle}</NavbarBrand>
+        <NavbarBrand><Link to='/' className="text-error">{siteTitle}</Link></NavbarBrand>
         <Nav className="ml-auto" navbar>
           {isAuthenticated() ? (
             <>
@@ -37,15 +37,12 @@ const Header = ({ siteTitle }) => {
                 Manage
               </Link>{" "}
               &nbsp;&nbsp;
-              <a href="#" onClick={logout} className="my-auto">
+              <Button onClick={logout} className="my-auto">
                 Logout
-              </a>
+              </Button>
             </>
           ) : (
-            <Button className="bg-white">
-              <a href="#" onClick={login}>
-                Login
-              </a>
+            <Button onClick={login} className="bg-secondary">Login
             </Button>
           )}
         </Nav>

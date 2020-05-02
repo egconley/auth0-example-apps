@@ -1,6 +1,5 @@
 import auth0 from "auth0-js"
 import { navigate } from "gatsby"
-import ls from "local-storage"
 
 const isBrowser = typeof window !== "undefined"
 
@@ -27,7 +26,7 @@ export const isAuthenticated = () => {
     return
   }
 
-  return ls.get("isLoggedIn") === "true"
+  return localStorage.getItem("isLoggedIn") === "true"
 }
 
 export const login = () => {
@@ -51,9 +50,8 @@ const setSession = (cb = () => {}) => (err, authResult) => {
     tokens.idToken = authResult.idToken
     tokens.expiresAt = expiresAt
     user = authResult.idTokenPayload
-    ls.set("isLoggedIn", true)
-    ls.set("user", JSON.stringify(user))
-    navigate("/")
+    localStorage.setItem("isLoggedIn", true)
+    navigate("/profile")
     cb()
   }
 }
@@ -72,15 +70,10 @@ export const handleAuthentication = () => {
 }
 
 export const getProfile = () => {
-  const getUser = ls.get("user", user)
-  if (getUser !== null && getUser !== undefined) {
-    return getUser
-  }
-  return handleAuthentication()
+  return user
 }
 
 export const logout = () => {
-  ls.set("isLoggedIn", false)
-  ls.set("user", null)
+  localStorage.setItem("isLoggedIn", false)
   auth.logout()
 }

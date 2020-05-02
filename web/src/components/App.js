@@ -8,59 +8,30 @@ import {
   Button,
 } from "reactstrap"
 import React from "react"
-import { useState, useEffect } from "react"
-import { toDataUrl } from "../../functions/lib/screenshots"
+import { Link } from 'gatsby'
+
 
 const App = ({ app }) => {
-  const [screenshot, setScreenshot] = useState()
-  const refetchScreenshot = async screenshotUrl => {
-    console.log("refetching screenshot for " + screenshotUrl)
-    function callback(result) {
-      console.log("refetch callback fired")
-      setScreenshot(result)
-      localStorage.setItem(app.name, result)
-      return result
-    }
-
-    const base64image = await toDataUrl(screenshotUrl, callback)
-    return base64image
-  }
-
-  useEffect(() => {
-    const isInLocalStorage = localStorage.getItem(app.node.name)
-    const existingTimestamp = localStorage.getItem("timestamp")
-    const currentTimestamp = Date.now()
-
-    if (
-      isInLocalStorage === undefined ||
-      isInLocalStorage === null ||
-      currentTimestamp - existingTimestamp > 432000000
-    ) {
-      refetchScreenshot(app.node.screenshot)
-      localStorage.setItem("timestamp", currentTimestamp)
-    } else {
-      setScreenshot(localStorage.getItem(app.node.name))
-    }
-  }, [])
-
+  const slug = `app/${app.node.slug.current}`
   return (
     <>
       <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
-        <a href={app.node.url}>
+        <Link to={slug}>
           <CardImg
             top
-            style={{ minHeight: "200" + "px" }}
-            src={screenshot}
-            alt={app.node.name}
+            style={{ minHeight: "200px" }}
+            src={app.node.screenshot.asset.url}
+            alt={app.node.title}
+            loading="lazy"
           />
-        </a>
+        </Link>
         <CardBody>
           <CardTitle>
-            <a href={app.node.url}>
-              <h2>{app.node.name}</h2>
-            </a>
+            <Link to={slug}>
+              <h2>{app.node.title}</h2>
+            </Link>
           </CardTitle>
-          <CardText>{app.node.description}</CardText>
+          <CardText>{app.node._rawDescription[0].children[0].text}</CardText>
           <Row className="mx-auto justify-content-between">
             <p>
               <a href={app.node.quickstart} className="text-muted">
@@ -68,7 +39,7 @@ const App = ({ app }) => {
               </a>
             </p>
             <p>
-              <a href={app.node.stack.url} className="text-muted">
+              <a href={app.node.docs} className="text-muted">
                 Docs
               </a>
             </p>
@@ -80,7 +51,7 @@ const App = ({ app }) => {
           </Row>
           <Row className="mx-auto justify-content-center mb-3">
             <Button className="btn-block btn-light" href={app.node.url}>
-              {app.node.name} &rarr;
+              {app.node.title} &rarr;
             </Button>
           </Row>
         </CardBody>
