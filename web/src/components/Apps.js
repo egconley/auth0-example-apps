@@ -4,6 +4,10 @@ import ContentLoader from "react-content-loader"
 import React from "react"
 
 const Apps = ({ apps }) => {
+
+  if(!apps || apps === undefined){
+    return <ContentPlaceholder />
+  }
   return (
     <Row className="mx-auto" style={{ width: 90 + "%" }}>
       {apps.map(app => (

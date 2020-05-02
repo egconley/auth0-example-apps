@@ -9,6 +9,7 @@ import {
 } from "reactstrap"
 import React, { useState, useEffect } from "react"
 import { Link } from 'gatsby'
+import { ProfilePlaceholder } from '../pages/profile'
 
 
 const App = ({ app }) => {
@@ -33,19 +34,19 @@ const App = ({ app }) => {
   screenshot();
   }, [])
 
-console.log(siteScreenshot);
-
   return (
     <>
       <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
         <Link to={slug}>
-          <CardImg
-            top
-            style={{ minHeight: "200px" }}
-            src={siteScreenshot}
-            alt={app.node.title}
-            loading="lazy"
-          />
+          {siteScreenshot ?
+            <CardImg
+              top
+              style={{ minHeight: "200px" }}
+              src={siteScreenshot}
+              alt={app.node.title}
+              loading="lazy"
+            />
+          : <ProfilePlaceholder type="screenshot" /> }
         </Link>
         <CardBody>
           <CardTitle>
