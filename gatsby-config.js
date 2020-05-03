@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `DSE Sample Apps`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Kick off your next troubleshooting project with one of Auth0 sample apps. Use provided tenant settings to speed things up even more!`,
     author: `@rosnovsky`,
   },
   plugins: [
@@ -33,6 +33,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    // `gatsby-plugin-preact`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
