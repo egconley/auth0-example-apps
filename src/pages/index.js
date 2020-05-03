@@ -35,36 +35,36 @@ export default IndexPage
 
 export const data = graphql`
   query {
-  allSanityApp {
-    edges {
-      node {
-        title
-        screenshot {
-          asset {
-            url
-          }
-        }
-        _rawDescription(resolveReferences: {maxDepth: 5})
-        technology {
+    allSanityApp {
+      edges {
+        node {
           title
-          slug {
-            current
-          }
-          logo {
+          screenshot {
             asset {
               url
             }
           }
+          _rawDescription(resolveReferences: { maxDepth: 5 })
+          technology {
+            title
+            slug {
+              current
+            }
+            logo {
+              asset {
+                url
+              }
+            }
+          }
+          slug {
+            current
+          }
+          deploy
+          quickstart
+          docs
+          url
+          _id
         }
-        slug {
-          current
-        }
-        deploy
-        quickstart
-        docs
-        url
-        _id
-      }
       }
     }
   }

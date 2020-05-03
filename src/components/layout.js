@@ -33,7 +33,12 @@ const Layout = ({ children }) => {
             <Row className="container container-fluid mx-auto">
               <Col className="col-12 col-md">
                 <a className="mx-auto mb-2" href="https://auth0.com">
-                  <img loading="lazy" src={logo} width="50px" alt="Auth0 Logo" />
+                  <img
+                    loading="lazy"
+                    src={logo}
+                    width="50px"
+                    alt="Auth0 Logo"
+                  />
                 </a>
                 <p className="mt-2">Identity is complex. Deal with it.</p>
               </Col>

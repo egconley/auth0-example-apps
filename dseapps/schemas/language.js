@@ -1,51 +1,53 @@
-import { BsCodeSlash } from 'react-icons/bs'
+import { BsCodeSlash } from "react-icons/bs"
 
 export default {
-    name: 'language',
-    title: 'Language',
-    type: 'document',
-    icon: BsCodeSlash,
-    fields: [
+  name: "language",
+  title: "Language",
+  type: "document",
+  icon: BsCodeSlash,
+  fields: [
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 100,
+      },
+    },
+    {
+      name: "resources",
+      title: "Helpful resources",
+      type: "array",
+      of: [
         {
-        name: 'title',
-        title: 'Title',
-        type: 'string'
+          type: "url",
         },
-        {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-            source: 'title',
-            maxLength: 100
-        }
-        },
-        {
-            name: 'resources',
-            title: 'Helpful resources',
-            type: 'array',
-            of: [{
-                type: 'url'
-            }]
-        },
-        {
-        name: 'specs',
-        title: 'Specs URL',
-        type: 'url'
-        },
-        {
-        name: 'logo',
-        title: 'Language Logo',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-        },
-    ],
-    preview: {
-        select: {
-        title: 'title',
-        media: 'logo',
-        }
-    }
+      ],
+    },
+    {
+      name: "specs",
+      title: "Specs URL",
+      type: "url",
+    },
+    {
+      name: "logo",
+      title: "Language Logo",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+      media: "logo",
+    },
+  },
 }

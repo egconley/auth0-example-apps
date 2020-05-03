@@ -11,7 +11,7 @@ const createAppPages = async (graphql, actions, reporter) => {
                 url
               }
             }
-            _rawDescription(resolveReferences: {maxDepth: 5})
+            _rawDescription(resolveReferences: { maxDepth: 5 })
             technology {
               title
               slug {
@@ -27,8 +27,8 @@ const createAppPages = async (graphql, actions, reporter) => {
             url
             _id
           }
-          }
         }
+      }
     }
   `)
   if (result.errors) {
@@ -47,7 +47,7 @@ const createAppPages = async (graphql, actions, reporter) => {
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  await createAppPages(graphql, actions, reporter);
+  await createAppPages(graphql, actions, reporter)
 }
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {

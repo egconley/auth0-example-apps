@@ -8,12 +8,11 @@ import {
   Button,
 } from "reactstrap"
 import React, { useState, useEffect } from "react"
-import { Link } from 'gatsby'
-import { ProfilePlaceholder } from '../pages/profile'
-
+import { Link } from "gatsby"
+import { ProfilePlaceholder } from "../pages/profile"
 
 const App = ({ app }) => {
-  const [siteScreenshot, setSiteScreenshot] = useState();
+  const [siteScreenshot, setSiteScreenshot] = useState()
 
   const slug = `app/${app.node.slug.current}`
 
@@ -24,21 +23,23 @@ const App = ({ app }) => {
 
     // For now, this code just fetches a single screenshot which acts as a placeholder.
     const screenshot = async () => {
-      return fetch("https://dse.netlify.app/.netlify/functions/screenshot", { headers: { "Accept": "application/json" } })
-          .then(response => response.json())
-          .then(data => {
-              setSiteScreenshot(data);
-              })
-      .catch(error => ({ statusCode: 422, body: String(error) }));
-  };
-  screenshot();
+      return fetch("https://dse.netlify.app/.netlify/functions/screenshot", {
+        headers: { Accept: "application/json" },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setSiteScreenshot(data)
+        })
+        .catch((error) => ({ statusCode: 422, body: String(error) }))
+    }
+    screenshot()
   }, [])
 
   return (
     <>
       <Card style={{ width: 24 + "rem" }} className="mx-auto mt-5">
         <Link to={slug}>
-          {siteScreenshot ?
+          {siteScreenshot ? (
             <CardImg
               top
               style={{ minHeight: "200px" }}
@@ -46,7 +47,9 @@ const App = ({ app }) => {
               alt={app.node.title}
               loading="lazy"
             />
-          : <ProfilePlaceholder type="screenshot" /> }
+          ) : (
+            <ProfilePlaceholder type="screenshot" />
+          )}
         </Link>
         <CardBody>
           <CardTitle>
@@ -69,7 +72,10 @@ const App = ({ app }) => {
           </Row>
           <Row className="mx-auto justify-content-center mb-3">
             <a href={app.node.deploy} className="deploy">
-              <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+              <img
+                src="https://www.netlify.com/img/deploy/button.svg"
+                alt="Deploy to Netlify"
+              />
             </a>
           </Row>
           <Row className="mx-auto justify-content-center mb-3">

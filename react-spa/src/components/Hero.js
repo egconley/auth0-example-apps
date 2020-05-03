@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.svg"
 
 const Hero = () => (
   <div className="text-center hero my-5">
@@ -12,6 +12,6 @@ const Hero = () => (
       an SPA, using <a href="https://reactjs.org">React.js</a>
     </p>
   </div>
-);
+)
 
-export default Hero;
+export default Hero

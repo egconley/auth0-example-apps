@@ -13,15 +13,15 @@ const router = new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
     },
     {
       path: "/profile",
       name: "profile",
       component: Profile,
-      beforeEnter: authGuard
-    }
-  ]
+      beforeEnter: authGuard,
+    },
+  ],
 });
 
 export default router;

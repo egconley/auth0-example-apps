@@ -13,7 +13,7 @@
 @param {object} context.webtask - webtask context
 @param {function} cb - function (error)
 */
-const got = require('got')
+const got = require("got")
 
 module.exports = async function hook(user, context, cb) {
   try {
@@ -26,7 +26,7 @@ module.exports = async function hook(user, context, cb) {
 }
 
 async function getCredentials(context) {
-  const {body} = await got.post(
+  const { body } = await got.post(
     `https://${context.connection.tenant}.auth0.com/oauth/token`,
     {
       json: true,
@@ -35,17 +35,17 @@ async function getCredentials(context) {
         client_id: context.webtask.secrets.CLIENT_ID,
         client_secret: context.webtask.secrets.CLIENT_SECRET,
         audience: `https://${context.connection.tenant}.auth0.com/api/v2/`,
-        grant_type: 'client_credentials',
+        grant_type: "client_credentials",
       },
     }
   )
   return body.access_token
 }
 
-async function getAllRefreshTokens({id}, applicationId, context, token) {
+async function getAllRefreshTokens({ id }, applicationId, context, token) {
   const url = `https://${context.connection.tenant}.auth0.com/api/v2/device-credentials?type=refresh_token&&client_id=${applicationId}&user_id=auth0|${id}`
   try {
-    var {body} = await got.get(url, {
+    var { body } = await got.get(url, {
       json: true,
       headers: {
         Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ async function getAllRefreshTokens({id}, applicationId, context, token) {
 
 async function getConnectionById(id, context, token) {
   try {
-    const {body} = await got.get(
+    const { body } = await got.get(
       `https://${context.connection.tenant}.auth0.com/api/v2/connections/${id}`,
       {
         json: true,
@@ -76,7 +76,7 @@ async function getConnectionById(id, context, token) {
   }
 }
 
-async function deleteRefreshToken({id}, context, token) {
+async function deleteRefreshToken({ id }, context, token) {
   try {
     await got.delete(
       `https://${context.connection.tenant}.auth0.com/api/v2/device-credentials/${id}`,
@@ -105,12 +105,12 @@ async function revoke(user, context) {
     context,
     accessToken
   )
-  
+
   await Promise.all(
-    tokens.map(e => deleteRefreshToken(e, context, accessToken))
+    tokens.map((e) => deleteRefreshToken(e, context, accessToken))
   )
   return {
-    message: 'Credentials revoked successfully',
+    message: "Credentials revoked successfully",
     count: tokens.length,
   }
 }

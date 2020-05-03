@@ -4,7 +4,6 @@
 
 ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_accessibility.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_best-practices.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_performance.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_seo.svg.svg) ![](https://s3.us-west-1.wasabisys.com/rosnovsky-media/lighthouse_pwa.svg)
 
-
 The purpose of this project is to help [Auth0](https://auth0.com) Developer Support Engineers spin-up, troubleshoot, and experiment with a variety of application they encounter daily. Work in progress
 
 ## Flow
@@ -15,7 +14,7 @@ One of the main features here is a single-button deployment and Auth0 tenant set
 
 ## Stack and Tech
 
-### Hosting 
+### Hosting
 
 We deploy to [Netlify](https://netlify.com) — a fantastic [JAMstack](https://jamstack.org) hosting. It's perfect for single-page apps and static websites. For apps that require a backed server (regular webapps), hosting solution TBD 🤷‍♂️
 

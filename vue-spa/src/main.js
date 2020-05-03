@@ -14,13 +14,13 @@ Vue.config.productionTip = false;
 Vue.use(Auth0Plugin, {
   domain,
   clientId,
-  onRedirectCallback: appState => {
+  onRedirectCallback: (appState) => {
     router.push(
       appState && appState.targetUrl
         ? appState.targetUrl
         : window.location.pathname
     );
-  }
+  },
 });
 
 Vue.directive("highlightjs", HighlightJs);
@@ -30,5 +30,5 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 new Vue({
   router,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");

@@ -1,55 +1,59 @@
-import { BsCodeSlash } from 'react-icons/bs'
+import { BsCodeSlash } from "react-icons/bs"
 
 export default {
-  name: 'stack',
-  title: 'Stack',
-  type: 'document',
+  name: "stack",
+  title: "Stack",
+  type: "document",
   icon: BsCodeSlash,
   fields: [
     {
-      name: 'title',
-      title: 'title',
-      type: 'string'
+      name: "title",
+      title: "title",
+      type: "string",
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       options: {
-        source: 'title',
-        maxLength: 100
-      }
+        source: "title",
+        maxLength: 100,
+      },
     },
     {
-      name: 'languages',
-      title: 'Languages',
-      type: 'array',
-      of: [{
-        type: 'reference',
-        to: [{
-          type: 'language'
-        }]
-      }]
+      name: "languages",
+      title: "Languages",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [
+            {
+              type: "language",
+            },
+          ],
+        },
+      ],
     },
     {
-      name: 'docs',
-      title: 'Stack Docs URL',
-      type: 'url'
+      name: "docs",
+      title: "Stack Docs URL",
+      type: "url",
     },
     {
-      name: 'logo',
-      title: 'Stack Logo',
-      type: 'image',
+      name: "logo",
+      title: "Stack Logo",
+      type: "image",
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
   ],
   preview: {
     select: {
-      title: 'title',
-      media: 'logo',
-      subtitle: 'languages.0.title'
-    }
-  }
+      title: "title",
+      media: "logo",
+      subtitle: "languages.0.title",
+    },
+  },
 }

@@ -2,7 +2,7 @@ const webpack = require("webpack");
 
 module.exports = {
   devServer: {
-    port: 3000
+    port: 3000,
   },
   configureWebpack: {
     plugins: [
@@ -10,8 +10,8 @@ module.exports = {
         $: "jquery",
         jquery: "jquery",
         "window.jQuery": "jquery",
-        jQuery: "jquery"
-      })
-    ]
-  }
+        jQuery: "jquery",
+      }),
+    ],
+  },
 };
